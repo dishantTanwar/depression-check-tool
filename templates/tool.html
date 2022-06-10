@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Depression Check</title>
+</head>
+<body>
+    <div class="outer">
+        <div class="header">
+            <div class="name-of-app">
+                Depression Check
+            </div>
+            
+            <ul class="nav-list">
+                <li><a href="/">Home</a></li>
+                <li><a href="/tool">Our Model</a></li>
+                <li><a href="/traditional-tool">Traditional Model</a></li>
+            </ul>
+
+        </div>
+        <div class="main">
+            <form action="/result" method="post">
+                <!-- Personal Details  -->
+                <fieldset class="detail-container">
+                    <legend>Enter Details</legend>
+
+                    <!-- Name -->
+                    <label for="name">Name</label>
+                    <input required type="text" name="name" id="name" placeholder="Enter your name">
+                        
+                    <!-- Gender -->
+                    <label for="gender">Gender</label>
+                    <div class="row">
+                        <div class="center">
+                            <label for="gender1">Male</label> 
+                            <input required type="radio" name="gender" value="Male" id="gender1">
+                        </div> 
+                        <div class="center">
+                            <label for="gender2">Female</label>
+                            <input required type="radio" name="gender" value="Female" id="gender2">
+                        </div>
+                    </div> 
+
+                    <!-- Age Group -->
+                    <label for="age-group">Age Group</label>
+                    <select required name="age-group" id="age-group">
+                        <option value="" selected disabled>--Please choose an option--</option>
+                        <option value="18-25">Less than 18</option>
+                        <option value="18-25">18 - 25</option>
+                        <option value="26-35">26 - 35</option>
+                        <option value="36-45">36 - 45</option>
+                        <option value="45 and above">46 & above</option>
+                    </select>
+
+                    <!-- Qualification -->
+                    <label for="qualification">Qualification</label>
+                    <select required name="Qualification" id="qualification">
+                        <option value="" selected disabled>--Please choose an option--</option>
+                        <option value="Graduate">Graduate</option>
+                        <option value="Post Graduate">Post Graduate</option>
+                        <option value="Doctorate">Doctorate</option>
+                        <option value="Illiterate">Illiterate</option>
+                    </select>
+                    
+                    <!-- Occupation -->
+                    <label for="Occupation">Occupation</label>
+                    <select required name="Occupation" id="Occupation">
+                        <option value="" selected disabled>--Please choose an option--</option>
+                        <option value="Job">Job</option>
+                        <option value="Student">Student</option>
+                        <option value="Business">Business</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    
+                    <!-- Annual Income -->
+                    <label for="Annual-Income">Annual Income</label>
+                    <select required name="Annual Income" id="Annual-Income">
+                        <option value="" selected disabled>--Please choose an option--</option>
+                        <option value="Less than 2.5 Lakhs">Less than 2.5 Lakhs</option>
+                        <option value="2.5-3.5 Lakhs">2.5-3.5 Lakhs</option>
+                        <option value="3.5-4.5 Lakhs">3.5-4.5 Lakhs</option>
+                        <option value="4.5-5.5 Lakhs">4.5-5.5 Lakhs</option>
+                        <option value="5.5 Lakhs and above">5.5 Lakhs and above</option>
+                        <option value="No income">No income</option>
+                    </select>
+                    
+                    <!-- Marital Status -->
+                    <label for="Marital-Status">Marital Status</label>
+                    <select required name="Marital Status" id="Marital-Status">
+                        <option value="" selected disabled>--Please choose an option--</option>
+                        <option value="Married">Married</option>
+                        <option value="Unmarried">Unmarried</option>
+                    </select>
+
+                    <!-- Residence -->
+                    <label for="Residence">Residence</label>
+                    <select required name="Residence" id="Residence">
+                        <option value="" selected disabled>--Please choose an option--</option>
+                        <option value="Urban">Urban</option>
+                        <option value="Rural">Rural</option>
+                    </select>
+                </fieldset>
+
+                <!-- Life Style Questions -->
+
+                <fieldset class="detail-container">
+                    <legend>Life Style Questions</legend>
+
+                    <!-- has Pet -->
+                    <label for="has_pet">Do you have a Pet?</label>
+                    <div class="row">
+                        <div class="center">
+                            <label for="has_pet1">Yes</label> 
+                            <input required type="radio" name="has_pet" value="1" id="has_pet1">
+                        </div> 
+                        <div class="center">
+                            <label for="has_pet2">No</label>
+                            <input required type="radio" name="has_pet" value="0" id="has_pet2">
+                        </div>
+                    </div> 
+                    
+                    <!-- has Pet -->
+                    <label for="has_park">Do you have a Park nearby?</label>
+                    <div class="row">
+                        <div class="center">
+                            <label for="has_park1">Yes</label> 
+                            <input required type="radio" name="has_park" value="1" id="has_park1">
+                        </div> 
+                        <div class="center">
+                            <label for="has_park2">No</label>
+                            <input required type="radio" name="has_park" value="0" id="has_park2">
+                        </div>
+                    </div>
+
+                    <!-- is social media usage high -->
+                    <label for="is_smu_high">Do you have high social media usage?</label>
+                    <div class="row">
+                        <div class="center">
+                            <label for="is_smu_high1">Yes</label> 
+                            <input required type="radio" name="is_smu_high" value="1" id="is_smu_high1">
+                        </div> 
+                        <div class="center">
+                            <label for="is_smu_high2">No</label>
+                            <input required type="radio" name="is_smu_high" value="0" id="is_smu_high2">
+                        </div>
+                    </div>
+
+                    <!-- flexible work hours or lifestyle -->
+                    <label for="has_flexible_work_hours">Do you have flexible work/school/business hours?</label>
+                    <div class="row">
+                        <div class="center">
+                            <label for="has_flexible_work_hours1">Yes</label> 
+                            <input required type="radio" name="has_flexible_work_hours" value="1" id="has_flexible_work_hours1">
+                        </div> 
+                        <div class="center">
+                            <label for="has_flexible_work_hours2">No</label>
+                            <input required type="radio" name="has_flexible_work_hours" value="0" id="has_flexible_work_hours2">
+                        </div>
+                    </div>
+                    
+                </fieldset>
+
+                <!-- Behavioral Questions -->
+                <fieldset class="card">
+                    <legend>Behavioral Questions</legend>
+                    <ol class="container">
+                        <h4>Questions..</h4>
+                        <h4>True</h4>
+                        <h4>False</h4>
+
+                        <li>Losing interest in social activities</li>
+                            <input required type="radio" name="q1" id="t" value="1">
+                            <input required type="radio" name="q1" id="f" value="0">
+                        
+                        <li>
+                            Loss of Energy or excessive tiredness</li>
+                            <input required type="radio" name="q2" value="1">
+                            <input required type="radio" name="q2" value="0">
+                        
+                        <li>
+                            Losing excitement in activities those used to excite earlier.</li>
+                            <input required type="radio" name="q3" value="1">
+                            <input required type="radio" name="q3" value="0">
+                        <li>
+                            Prefer sitting alone</li>
+                            <input required type="radio" name="q4" value="1">
+                            <input required type="radio" name="q4" value="0">
+                        <li>
+                            Less interactive as per people point of view</li>
+                            <input required type="radio" name="q5" value="1">
+                            <input required type="radio" name="q5" value="0">
+                        <li>
+                            Persistently feels sadness of mood</li>
+                            <input required type="radio" name="q6" value="1">
+                            <input required type="radio" name="q6" value="0">
+                        <li>
+                            Often noticed having frequent crying spells</li>
+                            <input required type="radio" name="q7" value="1">
+                            <input required type="radio" name="q7" value="0">
+                        <li>
+                            Less Confident</li>
+                            <input required type="radio" name="q8" value="1">
+                            <input required type="radio" name="q8" value="0">
+                        <li>
+                            Facing difficulties in planning and executing tasks</li>
+                            <input required type="radio" name="q9" value="1">
+                            <input required type="radio" name="q9" value="0">
+                        <li>
+                            Have you become indecisive?</li>
+                            <input required type="radio" name="q10" value="1">
+                            <input required type="radio" name="q10" value="0">
+                        <li>
+                            Facing concentration issues</li>
+                            <input required type="radio" name="q11" value="1">
+                            <input required type="radio" name="q11" value="0">
+                        <li>
+                            Persistently Feeling of self worthlessness</li>
+                            <input required type="radio" name="q12" value="1">
+                            <input required type="radio" name="q12" value="0">
+                        <li>
+                            Feeling of empty and emotional numbing</li>
+                            <input required type="radio" name="q13" value="1">
+                            <input required type="radio" name="q13" value="0">
+                        <li>
+                            Feeling of hopelessness</li>
+                            <input required type="radio" name="q14" value="1">
+                            <input required type="radio" name="q14" value="0">
+                        <li>
+                            Do you feel that nobody understands you?</li>
+                            <input required type="radio" name="q15" value="1">
+                            <input required type="radio" name="q15" value="0">
+                        <li>
+                            Do you have sleeping disturbance?</li>
+                            <input required type="radio" name="q16" value="1">
+                            <input required type="radio" name="q16" value="0">
+                        <li>
+                            Feeling changes in Appetite and Significant Weight lose</li>
+                            <input required type="radio" name="q17" value="1">
+                            <input required type="radio" name="q17" value="0">
+                        <li>
+                            Feeling often restless or being slowed</li>
+                            <input required type="radio" name="q18" value="1">
+                            <input required type="radio" name="q18" value="0">
+                        <li>
+                            Ever thought of attempting suicide (Deliberate self harm / death wishes/ ideation / made plans / attempted)</li>
+                            <input required type="radio" name="q19" value="1">
+                            <input required type="radio" name="q19" value="0">
+                        <li>
+                            Do you think these symptoms are present persistently for more than two weeks?</li>
+                            <input required type="radio" name="q20" value="1">
+                            <input required type="radio" name="q20" value="0">
+                        <li>
+                            Do you feel these symptoms put a significant impact on your Social / Occupational / Family or other important areas of your life?</li>
+                            <input required type="radio" name="q21" value="1">
+                            <input required type="radio" name="q21" value="0">
+                    </ol>
+
+                </fieldset>
+
+                <!-- Daily Sentiment -->
+                <fieldset class="card">
+                    <p style="color: black; font-weight: 350;">Report your day-wise overall sentient for the week</p>
+                    <legend>Daily Sentiment Report</legend>
+                    <ol class="daily-container">
+                        <h5>Day</h5>
+                        <h5>Lonely</h5>
+                        <h5>Sad</h5>
+                        <h5>Not Happy</h5>
+                        <h5>Feel Nothig</h5>
+                        <h5>Neutral</h5>
+                        <h5>Happy</h5>
+                        <h5>Very Happy</h5>
+
+                        <li>Monday</li>
+                            <input required type="radio" name="Monday" value="-3">
+                            <input type="radio" name="Monday" value="-2">
+                            <input type="radio" name="Monday" value="-1">
+                            <input type="radio" name="Monday" value="0">
+                            <input type="radio" name="Monday" value="1">
+                            <input type="radio" name="Monday" value="2">
+                            <input type="radio" name="Monday" value="3">
+                        
+                        <li>Tuesday</li>
+                            <input type="radio" name="Tuesday" value="-3">
+                            <input type="radio" name="Tuesday" value="-2">
+                            <input type="radio" name="Tuesday" value="-1">
+                            <input type="radio" name="Tuesday" value="0">
+                            <input type="radio" name="Tuesday" value="1">
+                            <input type="radio" name="Tuesday" value="2">
+                            <input type="radio" name="Tuesday" value="3">
+                        <li>Wednesday</li>
+                            <input type="radio" name="Wednesday" value="-3">
+                            <input type="radio" name="Wednesday" value="-2">
+                            <input type="radio" name="Wednesday" value="-1">
+                            <input type="radio" name="Wednesday" value="0">
+                            <input type="radio" name="Wednesday" value="1">
+                            <input type="radio" name="Wednesday" value="2">
+                            <input type="radio" name="Wednesday" value="3">
+                        <li>Thursday</li>
+                            <input type="radio" name="Thursday" value="-3">
+                            <input type="radio" name="Thursday" value="-2">
+                            <input type="radio" name="Thursday" value="-1">
+                            <input type="radio" name="Thursday" value="0">
+                            <input type="radio" name="Thursday" value="1">
+                            <input type="radio" name="Thursday" value="2">
+                            <input type="radio" name="Thursday" value="3">
+                        <li>Friday</li>
+                            <input type="radio" name="Friday" value="-3">
+                            <input type="radio" name="Friday" value="-2">
+                            <input type="radio" name="Friday" value="-1">
+                            <input type="radio" name="Friday" value="0">
+                            <input type="radio" name="Friday" value="1">
+                            <input type="radio" name="Friday" value="2">
+                            <input type="radio" name="Friday" value="3">
+                        <li>Saturday</li>
+                            <input type="radio" name="Satuarday" value="-3">
+                            <input type="radio" name="Satuarday" value="-2">
+                            <input type="radio" name="Satuarday" value="-1">
+                            <input type="radio" name="Satuarday" value="0">
+                            <input type="radio" name="Satuarday" value="1">
+                            <input type="radio" name="Satuarday" value="2">
+                            <input type="radio" name="Satuarday" value="3">
+                        <li>Sunday</li>
+                            <input type="radio" name="Sunday" value="-3">
+                            <input type="radio" name="Sunday" value="-2">
+                            <input type="radio" name="Sunday" value="-1">
+                            <input type="radio" name="Sunday" value="0">
+                            <input type="radio" name="Sunday" value="1">
+                            <input type="radio" name="Sunday" value="2">
+                            <input type="radio" name="Sunday" value="3">
+
+                    </ol>
+                </fieldset>
+                <button type="submit">Get Your Depression Level</button>
+            </form>
+        </div>
+        <footer>
+            <!-- <h3>Connect with us</h3> -->
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Depression Check</title>
+</head>
+<body>
+    <div class="outer">
+        <div class="header">
+            <div class="name-of-app">
+                Depression Check
+            </div>
+            
+            <ul class="nav-list">
+                <li><a href="/">Home</a></li>
+                <li><a href="/tool">Our Model</a></li>
+                <li><a href="/traditional-tool">Traditional Model</a></li>
+            </ul>
+
+        </div>
+        <div class="about-us card">
+            
+            <h1>Result</h1>
+            <p>Hi {{ name }}</p>
+            <p>Your Depression Level is: {{ result  + 1}}</p>
+
+            {% if result == -1 %}
+                <h4>Excellent! Your mental health seem great.</h2>
+            {% endif %}
+
+            {% if result == 0 %}
+                <h4>You have mild depression</h2>
+                <!-- <p>Seems like you are under some stres recently.</p>
+                <p>Don't worry life is a roller-coaster ride.</p> -->
+            {% endif %}
+
+            {% if result == 1 %}
+                <h4>You have moderate depression</h2>
+            {% endif %}
+
+            {% if result == 2 %}
+                <h3>You have severe depression</h3>
+                <p>There is nothing worng about being in depression. It's a common occurance, but to move past it might require some diagnosis from a doctor.</p>
+                <p>We suggest you to consult a doctor.</p>
+                <p>After comming out of depression, you'll be more mature and stronger than ever</p>
+            {% endif %}
+        </div>
+        <footer>
+            <!-- <h3>Connect with us</h3> -->
+        </footer>
+    </div>
+</body>
+</html>

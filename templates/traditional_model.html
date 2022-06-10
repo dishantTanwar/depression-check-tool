@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Depression Check</title>
+</head>
+<body>
+    <div class="outer">
+        <div class="header">
+            <div class="name-of-app">
+                Depression Check
+            </div>
+            
+            <ul class="nav-list">
+                <li><a href="/">Home</a></li>
+                <li><a href="/tool">Our Model</a></li>
+                <li><a href="/traditional-tool">Traditional Model</a></li>
+            </ul>
+
+        </div>
+        <div class="main">
+            <form action="/result-traditional" method="post">
+                <!-- Personal Details  -->
+                <fieldset class="detail-container">
+                    <legend>Enter Details</legend>
+
+                    <!-- Name -->
+                    <label for="name">Name</label>
+                    <input required type="text" name="name" id="name" placeholder="Enter your name">
+                </fieldset>        
+                <!-- Behavioral Questions -->
+                <fieldset class="card">
+                    <legend>Behavioral Questions</legend>
+                    <ol class="container">
+                        <h4>Questions..</h4>
+                        <h4>True</h4>
+                        <h4>False</h4>
+
+                        <li>Losing interest in social activities</li>
+                            <input required type="radio" name="q1" id="t" value="1">
+                            <input required type="radio" name="q1" id="f" value="0">
+                        
+                        <li>
+                            Loss of Energy or excessive tiredness</li>
+                            <input required type="radio" name="q2" value="1">
+                            <input required type="radio" name="q2" value="0">
+                        
+                        <li>
+                            Losing excitement in activities those used to excite earlier.</li>
+                            <input required type="radio" name="q3" value="1">
+                            <input required type="radio" name="q3" value="0">
+                        <li>
+                            Prefer sitting alone</li>
+                            <input required type="radio" name="q4" value="1">
+                            <input required type="radio" name="q4" value="0">
+                        <li>
+                            Less interactive as per people point of view</li>
+                            <input required type="radio" name="q5" value="1">
+                            <input required type="radio" name="q5" value="0">
+                        <li>
+                            Persistently feels sadness of mood</li>
+                            <input required type="radio" name="q6" value="1">
+                            <input required type="radio" name="q6" value="0">
+                        <li>
+                            Often noticed having frequent crying spells</li>
+                            <input required type="radio" name="q7" value="1">
+                            <input required type="radio" name="q7" value="0">
+                        <li>
+                            Less Confident</li>
+                            <input required type="radio" name="q8" value="1">
+                            <input required type="radio" name="q8" value="0">
+                        <li>
+                            Facing difficulties in planning and executing tasks</li>
+                            <input required type="radio" name="q9" value="1">
+                            <input required type="radio" name="q9" value="0">
+                        <li>
+                            Have you become indecisive?</li>
+                            <input required type="radio" name="q10" value="1">
+                            <input required type="radio" name="q10" value="0">
+                        <li>
+                            Facing concentration issues</li>
+                            <input required type="radio" name="q11" value="1">
+                            <input required type="radio" name="q11" value="0">
+                        <li>
+                            Persistently Feeling of self worthlessness</li>
+                            <input required type="radio" name="q12" value="1">
+                            <input required type="radio" name="q12" value="0">
+                        <li>
+                            Feeling of empty and emotional numbing</li>
+                            <input required type="radio" name="q13" value="1">
+                            <input required type="radio" name="q13" value="0">
+                        <li>
+                            Feeling of hopelessness</li>
+                            <input required type="radio" name="q14" value="1">
+                            <input required type="radio" name="q14" value="0">
+                        <li>
+                            Do you feel that nobody understands you?</li>
+                            <input required type="radio" name="q15" value="1">
+                            <input required type="radio" name="q15" value="0">
+                        <li>
+                            Do you have sleeping disturbance?</li>
+                            <input required type="radio" name="q16" value="1">
+                            <input required type="radio" name="q16" value="0">
+                        <li>
+                            Feeling changes in Appetite and Significant Weight lose</li>
+                            <input required type="radio" name="q17" value="1">
+                            <input required type="radio" name="q17" value="0">
+                        <li>
+                            Feeling often restless or being slowed</li>
+                            <input required type="radio" name="q18" value="1">
+                            <input required type="radio" name="q18" value="0">
+                        <li>
+                            Ever thought of attempting suicide (Deliberate self harm / death wishes/ ideation / made plans / attempted)</li>
+                            <input required type="radio" name="q19" value="1">
+                            <input required type="radio" name="q19" value="0">
+                        <li>
+                            Do you think these symptoms are present persistently for more than two weeks?</li>
+                            <input required type="radio" name="q20" value="1">
+                            <input required type="radio" name="q20" value="0">
+                        <li>
+                            Do you feel these symptoms put a significant impact on your Social / Occupational / Family or other important areas of your life?</li>
+                            <input required type="radio" name="q21" value="1">
+                            <input required type="radio" name="q21" value="0">
+                    </ol>
+
+                </fieldset>
+
+                <button type="submit">Get Your Depression Level</button>
+            </form>
+        </div>
+        <footer>
+            <!-- <h3>Connect with us</h3> -->
+        </footer>
+    </div>
+</body>
+</html>

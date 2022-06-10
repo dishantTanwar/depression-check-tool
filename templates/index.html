@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Depression Check</title>
+</head>
+<body>
+    <div class="outer">
+        <div class="header">
+            <div class="name-of-app">
+                Depression Check
+            </div>
+            
+            <ul class="nav-list">
+                <li><a href="/">Home</a></li>
+                <li><a href="/tool">Our Model</a></li>
+                <li><a href="/traditional-tool">Traditional Model</a></li>
+            </ul>
+
+        </div>
+        <div class="about-us card">
+            <h1>Who are we?</h1>
+            <p>
+                We have created this service for  people from all backgrounds so that they can track their mental health.
+                This is an AI based tool which suggests a person's mental health by providing a mental health risk score.</p>
+
+            <p>
+                If your score is 0 you are doing great, if it's 1 then you might have mild stress but for score greater than 1 you might be at a risk of having depression.
+            </p>
+
+        </div>
+        <footer>
+            <!-- <h3>Connect with us</h3> -->
+        </footer>
+    </div>
+</body>
+</html>
