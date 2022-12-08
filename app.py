@@ -122,7 +122,7 @@ def show_traditional_result():
         score += int(val)
     result = getDepLevel(score)
 
-    if (result <= 3):
+    if (score <= 3):
         result = -1
 
     return render_template('result.html', result=result, name=request.form.get('name'))
